@@ -1,0 +1,25 @@
+{
+    "decision":  "MIGRATION INCOMPLETE",
+    "regression":  {
+                       "backendPassed":  127,
+                       "failed":  0,
+                       "doctorPassed":  23,
+                       "skipped":  0,
+                       "patientPassed":  89
+                   },
+    "headlessAcceptance":  {
+                               "skipped":  0,
+                               "failed":  4,
+                               "passed":  0
+                           },
+    "priorBackendAttempt":  {
+                                "skipped":  0,
+                                "failed":  3,
+                                "passed":  124
+                            },
+    "device":  "BLOCKED",
+    "doctorDebugBuild":  "PASS",
+    "patientDebugBuild":  "INTERRUPTED",
+    "appointmentOrigin":  "real Patient API booking; Flutter booking confirmation not obtained",
+    "businessSourceChanged":  false
+}

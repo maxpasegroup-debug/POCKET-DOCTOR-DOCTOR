@@ -1,0 +1,6 @@
+{
+  "files": 6,
+  "findings": [],
+  "status": "PASS",
+  "scope": "New scripts and modified documentation: configured secret matches, private key and credential URL patterns. Existing backend privacy regression covers authorization."
+}

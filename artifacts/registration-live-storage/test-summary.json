@@ -1,0 +1,28 @@
+{
+  "doctor": {
+    "passed": 35,
+    "failed": 0,
+    "skipped": 0
+  },
+  "patient": {
+    "passed": 89,
+    "failed": 0,
+    "skipped": 0
+  },
+  "backend": {
+    "passed": 144,
+    "failed": 0,
+    "skipped": 0
+  },
+  "admin": {
+    "passed": 16,
+    "failed": 0,
+    "skipped": 0
+  },
+  "total": {
+    "passed": 284,
+    "failed": 0,
+    "skipped": 0
+  },
+  "scope": "Automated regression; not provider-backed live E2E"
+}

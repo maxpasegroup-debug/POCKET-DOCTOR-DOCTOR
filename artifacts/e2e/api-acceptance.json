@@ -1,0 +1,20 @@
+{
+  "scope": "Actual HTTP and database acceptance, not Flutter UI",
+  "outcomes": [
+    {
+      "label": "Doctor A OTP request",
+      "actor": "Doctor A",
+      "method": "POST",
+      "route": "/auth/otp/request",
+      "expected": 200,
+      "actual": 429,
+      "pass": false
+    },
+    {
+      "label": "Journey exception",
+      "pass": false,
+      "type": "AssertionError",
+      "message": "Details withheld; inspect preceding status and source assertions"
+    }
+  ]
+}

@@ -1,0 +1,2844 @@
+{
+  "safety": "PASS: documented local synthetic test cluster",
+  "identity": {
+    "database": "pocket_doctor_test",
+    "address": "127.0.0.1",
+    "port": 55433
+  },
+  "counts": {
+    "users": "114",
+    "doctors": "25",
+    "non_demo_doctors": "0"
+  },
+  "tables": [
+    {
+      "tablename": "AIAuditEvent"
+    },
+    {
+      "tablename": "AIConversation"
+    },
+    {
+      "tablename": "AIMemory"
+    },
+    {
+      "tablename": "AIMessage"
+    },
+    {
+      "tablename": "AIPreferences"
+    },
+    {
+      "tablename": "Address"
+    },
+    {
+      "tablename": "AdminAuditEvent"
+    },
+    {
+      "tablename": "AdminElevation"
+    },
+    {
+      "tablename": "AdminMfaCounter"
+    },
+    {
+      "tablename": "CartItem"
+    },
+    {
+      "tablename": "ConsentRecord"
+    },
+    {
+      "tablename": "Consultation"
+    },
+    {
+      "tablename": "ConsultationNote"
+    },
+    {
+      "tablename": "ConsultationReminder"
+    },
+    {
+      "tablename": "Coupon"
+    },
+    {
+      "tablename": "CouponPlan"
+    },
+    {
+      "tablename": "CouponRedemption"
+    },
+    {
+      "tablename": "Doctor"
+    },
+    {
+      "tablename": "DoctorAvailability"
+    },
+    {
+      "tablename": "DoctorAvailabilityException"
+    },
+    {
+      "tablename": "DoctorCredential"
+    },
+    {
+      "tablename": "EnrollmentPayment"
+    },
+    {
+      "tablename": "Invoice"
+    },
+    {
+      "tablename": "Lesson"
+    },
+    {
+      "tablename": "LessonProgress"
+    },
+    {
+      "tablename": "LiveSession"
+    },
+    {
+      "tablename": "MembershipBenefit"
+    },
+    {
+      "tablename": "MembershipPlan"
+    },
+    {
+      "tablename": "Notification"
+    },
+    {
+      "tablename": "Order"
+    },
+    {
+      "tablename": "OrderEvent"
+    },
+    {
+      "tablename": "OrderItem"
+    },
+    {
+      "tablename": "OtpChallenge"
+    },
+    {
+      "tablename": "PrivacyRequest"
+    },
+    {
+      "tablename": "Program"
+    },
+    {
+      "tablename": "ProgramCategory"
+    },
+    {
+      "tablename": "ProgramEnrollment"
+    },
+    {
+      "tablename": "ProgramModule"
+    },
+    {
+      "tablename": "ProviderEvent"
+    },
+    {
+      "tablename": "PushDevice"
+    },
+    {
+      "tablename": "Reminder"
+    },
+    {
+      "tablename": "RequestBudget"
+    },
+    {
+      "tablename": "Session"
+    },
+    {
+      "tablename": "Subscription"
+    },
+    {
+      "tablename": "SubscriptionEvent"
+    },
+    {
+      "tablename": "User"
+    },
+    {
+      "tablename": "UserRole"
+    },
+    {
+      "tablename": "WellnessCategory"
+    },
+    {
+      "tablename": "WellnessCheckIn"
+    },
+    {
+      "tablename": "WellnessGoal"
+    },
+    {
+      "tablename": "WellnessProduct"
+    },
+    {
+      "tablename": "WhatsAppIdentity"
+    },
+    {
+      "tablename": "WhatsAppLinkToken"
+    },
+    {
+      "tablename": "WhatsAppReceipt"
+    },
+    {
+      "tablename": "_prisma_migrations"
+    }
+  ],
+  "constraints": [
+    {
+      "conname": "AIAuditEvent_createdAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AIAuditEvent_event_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AIAuditEvent_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AIAuditEvent_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "AIAuditEvent_userId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "AIAuditEvent_userId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AIConversation_createdAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AIConversation_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AIConversation_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "AIConversation_updatedAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AIConversation_userId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "AIConversation_userId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AIMemory_createdAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AIMemory_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AIMemory_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "AIMemory_text_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AIMemory_updatedAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AIMemory_userId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "AIMemory_userId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AIMessage_conversationId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "AIMessage_conversationId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AIMessage_createdAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AIMessage_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AIMessage_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "AIMessage_prompt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AIMessage_requestKey_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AIMessage_response_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AIPreferences_appReminders_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AIPreferences_consultationReminders_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AIPreferences_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "AIPreferences_programReminders_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AIPreferences_providerConsent_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AIPreferences_updatedAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AIPreferences_useMemory_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AIPreferences_userId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "AIPreferences_userId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AIPreferences_wellnessReminders_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AIPreferences_whatsappReminders_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Address_city_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Address_country_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Address_fullName_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Address_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Address_isDefault_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Address_line1_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Address_line2_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Address_phone_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Address_pinCode_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Address_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "Address_state_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Address_userId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "Address_userId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AdminAuditEvent_action_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AdminAuditEvent_createdAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AdminAuditEvent_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AdminAuditEvent_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "AdminAuditEvent_requestId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AdminAuditEvent_result_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AdminElevation_expiresAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AdminElevation_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "AdminElevation_sessionId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AdminElevation_userId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AdminMfaCounter_counter_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AdminMfaCounter_failedAttempts_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AdminMfaCounter_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "AdminMfaCounter_userId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "AdminMfaCounter_windowStartedAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "CartItem_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "CartItem_observedPricePaise_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "CartItem_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "CartItem_productId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "CartItem_productId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "CartItem_quantity_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "CartItem_updatedAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "CartItem_userId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "CartItem_userId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ConsentRecord_createdAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ConsentRecord_granted_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ConsentRecord_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ConsentRecord_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "ConsentRecord_type_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ConsentRecord_userId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ConsentRecord_version_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ConsultationNote_consultationId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "ConsultationNote_consultationId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ConsultationNote_followUpNote_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ConsultationNote_followUpRequired_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ConsultationNote_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "ConsultationNote_privateNote_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ConsultationNote_summary_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ConsultationNote_updatedAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ConsultationReminder_consultationId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "ConsultationReminder_consultationId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ConsultationReminder_dueAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ConsultationReminder_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ConsultationReminder_minutesBefore_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ConsultationReminder_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "ConsultationReminder_status_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Consultation_createdAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Consultation_currency_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Consultation_doctorId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "Consultation_doctorId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Consultation_endsAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Consultation_feePaise_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Consultation_holdExpiresAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Consultation_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Consultation_mode_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Consultation_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "Consultation_refundStatus_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Consultation_reservedUntil_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Consultation_startsAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Consultation_status_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Consultation_timezone_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Consultation_userId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "Consultation_userId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "CouponPlan_couponId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "CouponPlan_couponId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "CouponPlan_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "CouponPlan_planId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "CouponPlan_planId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "CouponRedemption_basePaise_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "CouponRedemption_couponId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "CouponRedemption_couponId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "CouponRedemption_discountPaise_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "CouponRedemption_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "CouponRedemption_paymentId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "CouponRedemption_paymentId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "CouponRedemption_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "CouponRedemption_reservedUntil_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "CouponRedemption_userId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "CouponRedemption_userId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Coupon_active_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Coupon_code_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Coupon_endsAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Coupon_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Coupon_introductory_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Coupon_perUserLimit_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Coupon_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "Coupon_startsAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Coupon_type_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Coupon_usageLimit_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Coupon_value_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "DoctorAvailabilityException_doctorId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "DoctorAvailabilityException_doctorId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "DoctorAvailabilityException_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "DoctorAvailabilityException_localDate_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "DoctorAvailabilityException_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "DoctorAvailability_doctorId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "DoctorAvailability_doctorId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "DoctorAvailability_endMinute_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "DoctorAvailability_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "DoctorAvailability_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "DoctorAvailability_startMinute_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "DoctorAvailability_weekday_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "DoctorCredential_contentType_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "DoctorCredential_createdAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "DoctorCredential_doctorId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "DoctorCredential_doctorId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "DoctorCredential_fileName_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "DoctorCredential_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "DoctorCredential_kind_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "DoctorCredential_objectKey_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "DoctorCredential_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "DoctorCredential_size_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Doctor_acceptingAppointments_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Doctor_biography_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Doctor_bufferMinutes_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Doctor_consultationMinutes_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Doctor_featured_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Doctor_feePaise_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Doctor_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Doctor_isDemo_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Doctor_name_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Doctor_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "Doctor_qualification_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Doctor_specialty_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Doctor_timezone_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Doctor_userId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "Doctor_verificationStatus_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "EnrollmentPayment_amountPaise_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "EnrollmentPayment_consultationId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "EnrollmentPayment_createdAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "EnrollmentPayment_currency_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "EnrollmentPayment_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "EnrollmentPayment_orderId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "EnrollmentPayment_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "EnrollmentPayment_programId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "EnrollmentPayment_provider_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "EnrollmentPayment_refundStatus_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "EnrollmentPayment_status_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "EnrollmentPayment_subscriptionId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "EnrollmentPayment_userId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "EnrollmentPayment_userId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Invoice_amountPaise_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Invoice_currency_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Invoice_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Invoice_issuedAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Invoice_number_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Invoice_paymentId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "Invoice_paymentId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Invoice_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "Invoice_source_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Invoice_status_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "LessonProgress_enrollmentId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "LessonProgress_enrollmentId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "LessonProgress_lessonId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "LessonProgress_lessonId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "LessonProgress_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "LessonProgress_positionSeconds_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "LessonProgress_startedAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "LessonProgress_updatedAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Lesson_description_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Lesson_durationSeconds_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Lesson_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Lesson_moduleId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "Lesson_moduleId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Lesson_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "Lesson_position_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Lesson_required_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Lesson_supportingMaterial_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Lesson_title_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "LiveSession_durationMinutes_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "LiveSession_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "LiveSession_information_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "LiveSession_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "LiveSession_programId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "LiveSession_programId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "LiveSession_startsAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "LiveSession_title_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "MembershipBenefit_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "MembershipBenefit_key_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "MembershipBenefit_label_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "MembershipBenefit_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "MembershipBenefit_planId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "MembershipBenefit_planId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "MembershipBenefit_value_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "MembershipPlan_active_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "MembershipPlan_createdAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "MembershipPlan_currency_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "MembershipPlan_description_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "MembershipPlan_graceDays_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "MembershipPlan_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "MembershipPlan_interval_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "MembershipPlan_isDemo_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "MembershipPlan_name_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "MembershipPlan_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "MembershipPlan_position_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "MembershipPlan_pricePaise_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "MembershipPlan_slug_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "MembershipPlan_trialDays_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "MembershipPlan_updatedAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Notification_attempts_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Notification_channel_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Notification_createdAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Notification_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Notification_kind_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Notification_nextAttemptAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Notification_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "Notification_pushDeviceId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "Notification_route_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Notification_sourceKey_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Notification_status_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Notification_userId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "Notification_userId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "OrderEvent_createdAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "OrderEvent_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "OrderEvent_orderId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "OrderEvent_orderId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "OrderEvent_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "OrderEvent_status_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "OrderItem_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "OrderItem_name_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "OrderItem_orderId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "OrderItem_orderId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "OrderItem_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "OrderItem_productId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "OrderItem_productId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "OrderItem_quantity_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "OrderItem_returnPolicy_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "OrderItem_sku_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "OrderItem_unitPricePaise_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Order_addressSnapshot_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Order_createdAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Order_currency_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Order_deliveryPaise_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Order_discountPaise_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Order_holdExpiresAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Order_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Order_idempotencyKey_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Order_isDemo_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Order_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "Order_refundStatus_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Order_requestHash_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Order_status_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Order_subtotalPaise_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Order_totalPaise_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Order_updatedAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Order_userId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "Order_userId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "OtpChallenge_attempts_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "OtpChallenge_codeHash_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "OtpChallenge_consumed_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "OtpChallenge_expiresAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "OtpChallenge_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "OtpChallenge_phone_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "OtpChallenge_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "OtpChallenge_purpose_check",
+      "contype": "c"
+    },
+    {
+      "conname": "OtpChallenge_purpose_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "OtpChallenge_requestCount_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "OtpChallenge_requestedAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "OtpChallenge_windowStartedAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "PrivacyRequest_createdAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "PrivacyRequest_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "PrivacyRequest_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "PrivacyRequest_status_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "PrivacyRequest_type_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "PrivacyRequest_userId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "PrivacyRequest_userId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ProgramCategory_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ProgramCategory_name_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ProgramCategory_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "ProgramCategory_position_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ProgramEnrollment_enrolledAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ProgramEnrollment_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ProgramEnrollment_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "ProgramEnrollment_programId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "ProgramEnrollment_programId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ProgramEnrollment_status_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ProgramEnrollment_userId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "ProgramEnrollment_userId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ProgramModule_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ProgramModule_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "ProgramModule_position_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ProgramModule_programId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "ProgramModule_programId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ProgramModule_title_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Program_audience_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Program_categoryId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "Program_categoryId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Program_createdAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Program_currency_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Program_description_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Program_doctorId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "Program_doctorId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Program_durationMinutes_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Program_featured_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Program_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Program_isDemo_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Program_level_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Program_membershipOnly_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Program_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "Program_pricePaise_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Program_published_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Program_title_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Program_type_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ProviderEvent_createdAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ProviderEvent_eventId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ProviderEvent_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ProviderEvent_kind_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ProviderEvent_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "ProviderEvent_provider_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ProviderEvent_reference_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ProviderEvent_requestId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "ProviderEvent_status_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "PushDevice_createdAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "PushDevice_enabled_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "PushDevice_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "PushDevice_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "PushDevice_platform_check",
+      "contype": "c"
+    },
+    {
+      "conname": "PushDevice_platform_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "PushDevice_sessionId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "PushDevice_sessionId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "PushDevice_tokenEncrypted_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "PushDevice_tokenHash_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "PushDevice_updatedAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "PushDevice_userId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "PushDevice_userId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Reminder_completed_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Reminder_createdAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Reminder_dueAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Reminder_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Reminder_kind_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Reminder_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "Reminder_title_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Reminder_userId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "Reminder_userId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "RequestBudget_count_check",
+      "contype": "c"
+    },
+    {
+      "conname": "RequestBudget_count_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "RequestBudget_expiresAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "RequestBudget_key_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "RequestBudget_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "Session_createdAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Session_expiresAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Session_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Session_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "Session_tokenHash_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Session_userId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "Session_userId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "SubscriptionEvent_createdAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "SubscriptionEvent_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "SubscriptionEvent_kind_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "SubscriptionEvent_notificationPending_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "SubscriptionEvent_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "SubscriptionEvent_subscriptionId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "SubscriptionEvent_subscriptionId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Subscription_benefits_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Subscription_cancelAtPeriodEnd_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Subscription_createdAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Subscription_currency_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Subscription_graceDays_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Subscription_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Subscription_interval_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Subscription_isTrial_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Subscription_pendingUntil_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Subscription_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "Subscription_planId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "Subscription_planId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Subscription_pricePaise_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Subscription_provider_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Subscription_requestKey_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Subscription_status_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Subscription_trialUsed_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Subscription_updatedAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "Subscription_userId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "Subscription_userId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "UserRole_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "UserRole_role_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "UserRole_userId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "UserRole_userId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "User_accountStatus_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "User_createdAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "User_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "User_interests_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "User_language_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "User_notifications_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "User_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "User_updatedAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessCategory_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessCategory_name_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessCategory_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "WellnessCategory_position_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessCheckIn_date_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessCheckIn_energy_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessCheckIn_habitCompleted_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessCheckIn_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessCheckIn_mood_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessCheckIn_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "WellnessCheckIn_userId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "WellnessCheckIn_userId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessGoal_createdAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessGoal_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessGoal_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "WellnessGoal_progress_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessGoal_startDate_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessGoal_status_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessGoal_target_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessGoal_title_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessGoal_userId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "WellnessGoal_userId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessProduct_brand_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessProduct_categoryId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "WellnessProduct_categoryId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessProduct_collection_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessProduct_contentApproved_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessProduct_createdAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessProduct_description_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessProduct_doctorId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "WellnessProduct_featured_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessProduct_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessProduct_ingredients_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessProduct_isDemo_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessProduct_manufacturer_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessProduct_membershipOnly_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessProduct_name_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessProduct_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "WellnessProduct_pricePaise_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessProduct_quantityLabel_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessProduct_requiresEligibility_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessProduct_reservedQuantity_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessProduct_returnPolicy_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessProduct_shippingEligible_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessProduct_shortDescription_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessProduct_sku_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessProduct_slug_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessProduct_soldQuantity_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessProduct_status_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessProduct_stockQuantity_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessProduct_storage_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessProduct_updatedAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessProduct_usage_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WellnessProduct_warnings_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WhatsAppIdentity_lastInboundAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WhatsAppIdentity_linkedAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WhatsAppIdentity_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "WhatsAppIdentity_userId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "WhatsAppIdentity_userId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WhatsAppIdentity_waId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WhatsAppLinkToken_expiresAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WhatsAppLinkToken_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "WhatsAppLinkToken_tokenHash_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WhatsAppLinkToken_userId_fkey",
+      "contype": "f"
+    },
+    {
+      "conname": "WhatsAppLinkToken_userId_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WhatsAppReceipt_createdAt_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WhatsAppReceipt_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "WhatsAppReceipt_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "_prisma_migrations_applied_steps_count_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "_prisma_migrations_checksum_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "_prisma_migrations_id_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "_prisma_migrations_migration_name_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "_prisma_migrations_pkey",
+      "contype": "p"
+    },
+    {
+      "conname": "_prisma_migrations_started_at_not_null",
+      "contype": "n"
+    },
+    {
+      "conname": "address_market_valid",
+      "contype": "c"
+    },
+    {
+      "conname": "availability_window",
+      "contype": "c"
+    },
+    {
+      "conname": "cart_quantity_valid",
+      "contype": "c"
+    },
+    {
+      "conname": "consultation_time_and_fee",
+      "contype": "c"
+    },
+    {
+      "conname": "coupon_values",
+      "contype": "c"
+    },
+    {
+      "conname": "doctor_booking_configuration",
+      "contype": "c"
+    },
+    {
+      "conname": "doctor_no_overlapping_reservations",
+      "contype": "x"
+    },
+    {
+      "conname": "membership_plan_values",
+      "contype": "c"
+    },
+    {
+      "conname": "mfa_attempts_nonnegative",
+      "contype": "c"
+    },
+    {
+      "conname": "notification_attempts_nonnegative",
+      "contype": "c"
+    },
+    {
+      "conname": "order_amount_valid",
+      "contype": "c"
+    },
+    {
+      "conname": "order_item_valid",
+      "contype": "c"
+    },
+    {
+      "conname": "payment_nonnegative",
+      "contype": "c"
+    },
+    {
+      "conname": "payment_one_target",
+      "contype": "c"
+    },
+    {
+      "conname": "payment_refund_state",
+      "contype": "c"
+    },
+    {
+      "conname": "subscription_values",
+      "contype": "c"
+    },
+    {
+      "conname": "user_account_status_valid",
+      "contype": "c"
+    },
+    {
+      "conname": "wellness_active_eligibility",
+      "contype": "c"
+    },
+    {
+      "conname": "wellness_inventory_valid",
+      "contype": "c"
+    },
+    {
+      "conname": "wellness_price_valid",
+      "contype": "c"
+    }
+  ],
+  "indexes": [
+    {
+      "tablename": "AIAuditEvent",
+      "indexname": "AIAuditEvent_pkey"
+    },
+    {
+      "tablename": "AIAuditEvent",
+      "indexname": "AIAuditEvent_userId_createdAt_idx"
+    },
+    {
+      "tablename": "AIConversation",
+      "indexname": "AIConversation_pkey"
+    },
+    {
+      "tablename": "AIConversation",
+      "indexname": "AIConversation_userId_updatedAt_idx"
+    },
+    {
+      "tablename": "AIMemory",
+      "indexname": "AIMemory_pkey"
+    },
+    {
+      "tablename": "AIMemory",
+      "indexname": "AIMemory_userId_idx"
+    },
+    {
+      "tablename": "AIMessage",
+      "indexname": "AIMessage_conversationId_createdAt_idx"
+    },
+    {
+      "tablename": "AIMessage",
+      "indexname": "AIMessage_conversationId_requestKey_key"
+    },
+    {
+      "tablename": "AIMessage",
+      "indexname": "AIMessage_pkey"
+    },
+    {
+      "tablename": "AIPreferences",
+      "indexname": "AIPreferences_pkey"
+    },
+    {
+      "tablename": "Address",
+      "indexname": "Address_pkey"
+    },
+    {
+      "tablename": "Address",
+      "indexname": "Address_userId_idx"
+    },
+    {
+      "tablename": "Address",
+      "indexname": "address_one_default"
+    },
+    {
+      "tablename": "AdminAuditEvent",
+      "indexname": "AdminAuditEvent_actorId_createdAt_idx"
+    },
+    {
+      "tablename": "AdminAuditEvent",
+      "indexname": "AdminAuditEvent_createdAt_id_idx"
+    },
+    {
+      "tablename": "AdminAuditEvent",
+      "indexname": "AdminAuditEvent_pkey"
+    },
+    {
+      "tablename": "AdminElevation",
+      "indexname": "AdminElevation_expiresAt_idx"
+    },
+    {
+      "tablename": "AdminElevation",
+      "indexname": "AdminElevation_pkey"
+    },
+    {
+      "tablename": "AdminMfaCounter",
+      "indexname": "AdminMfaCounter_pkey"
+    },
+    {
+      "tablename": "CartItem",
+      "indexname": "CartItem_pkey"
+    },
+    {
+      "tablename": "CartItem",
+      "indexname": "CartItem_userId_productId_key"
+    },
+    {
+      "tablename": "ConsentRecord",
+      "indexname": "ConsentRecord_pkey"
+    },
+    {
+      "tablename": "ConsentRecord",
+      "indexname": "ConsentRecord_userId_type_createdAt_idx"
+    },
+    {
+      "tablename": "Consultation",
+      "indexname": "Consultation_doctorId_startsAt_status_idx"
+    },
+    {
+      "tablename": "Consultation",
+      "indexname": "Consultation_pkey"
+    },
+    {
+      "tablename": "Consultation",
+      "indexname": "Consultation_status_holdExpiresAt_idx"
+    },
+    {
+      "tablename": "Consultation",
+      "indexname": "Consultation_userId_startsAt_idx"
+    },
+    {
+      "tablename": "Consultation",
+      "indexname": "doctor_no_overlapping_reservations"
+    },
+    {
+      "tablename": "ConsultationNote",
+      "indexname": "ConsultationNote_pkey"
+    },
+    {
+      "tablename": "ConsultationReminder",
+      "indexname": "ConsultationReminder_consultationId_minutesBefore_key"
+    },
+    {
+      "tablename": "ConsultationReminder",
+      "indexname": "ConsultationReminder_pkey"
+    },
+    {
+      "tablename": "ConsultationReminder",
+      "indexname": "ConsultationReminder_status_dueAt_idx"
+    },
+    {
+      "tablename": "Coupon",
+      "indexname": "Coupon_code_key"
+    },
+    {
+      "tablename": "Coupon",
+      "indexname": "Coupon_pkey"
+    },
+    {
+      "tablename": "CouponPlan",
+      "indexname": "CouponPlan_pkey"
+    },
+    {
+      "tablename": "CouponRedemption",
+      "indexname": "CouponRedemption_couponId_userId_idx"
+    },
+    {
+      "tablename": "CouponRedemption",
+      "indexname": "CouponRedemption_paymentId_key"
+    },
+    {
+      "tablename": "CouponRedemption",
+      "indexname": "CouponRedemption_pkey"
+    },
+    {
+      "tablename": "Doctor",
+      "indexname": "Doctor_pkey"
+    },
+    {
+      "tablename": "Doctor",
+      "indexname": "Doctor_userId_key"
+    },
+    {
+      "tablename": "Doctor",
+      "indexname": "Doctor_verificationStatus_acceptingAppointments_idx"
+    },
+    {
+      "tablename": "DoctorAvailability",
+      "indexname": "DoctorAvailability_doctorId_weekday_startMinute_key"
+    },
+    {
+      "tablename": "DoctorAvailability",
+      "indexname": "DoctorAvailability_pkey"
+    },
+    {
+      "tablename": "DoctorAvailabilityException",
+      "indexname": "DoctorAvailabilityException_doctorId_localDate_key"
+    },
+    {
+      "tablename": "DoctorAvailabilityException",
+      "indexname": "DoctorAvailabilityException_pkey"
+    },
+    {
+      "tablename": "DoctorCredential",
+      "indexname": "DoctorCredential_doctorId_kind_idx"
+    },
+    {
+      "tablename": "DoctorCredential",
+      "indexname": "DoctorCredential_objectKey_key"
+    },
+    {
+      "tablename": "DoctorCredential",
+      "indexname": "DoctorCredential_pkey"
+    },
+    {
+      "tablename": "EnrollmentPayment",
+      "indexname": "EnrollmentPayment_consultationId_status_idx"
+    },
+    {
+      "tablename": "EnrollmentPayment",
+      "indexname": "EnrollmentPayment_orderId_status_idx"
+    },
+    {
+      "tablename": "EnrollmentPayment",
+      "indexname": "EnrollmentPayment_pkey"
+    },
+    {
+      "tablename": "EnrollmentPayment",
+      "indexname": "EnrollmentPayment_providerReference_key"
+    },
+    {
+      "tablename": "EnrollmentPayment",
+      "indexname": "EnrollmentPayment_subscriptionId_status_idx"
+    },
+    {
+      "tablename": "EnrollmentPayment",
+      "indexname": "EnrollmentPayment_userId_programId_status_idx"
+    },
+    {
+      "tablename": "EnrollmentPayment",
+      "indexname": "EnrollmentPayment_userId_requestKey_key"
+    },
+    {
+      "tablename": "Invoice",
+      "indexname": "Invoice_number_key"
+    },
+    {
+      "tablename": "Invoice",
+      "indexname": "Invoice_paymentId_key"
+    },
+    {
+      "tablename": "Invoice",
+      "indexname": "Invoice_pkey"
+    },
+    {
+      "tablename": "Invoice",
+      "indexname": "Invoice_source_issuedAt_idx"
+    },
+    {
+      "tablename": "Lesson",
+      "indexname": "Lesson_moduleId_position_key"
+    },
+    {
+      "tablename": "Lesson",
+      "indexname": "Lesson_pkey"
+    },
+    {
+      "tablename": "LessonProgress",
+      "indexname": "LessonProgress_pkey"
+    },
+    {
+      "tablename": "LiveSession",
+      "indexname": "LiveSession_pkey"
+    },
+    {
+      "tablename": "LiveSession",
+      "indexname": "LiveSession_programId_startsAt_idx"
+    },
+    {
+      "tablename": "MembershipBenefit",
+      "indexname": "MembershipBenefit_pkey"
+    },
+    {
+      "tablename": "MembershipBenefit",
+      "indexname": "MembershipBenefit_planId_key_key"
+    },
+    {
+      "tablename": "MembershipPlan",
+      "indexname": "MembershipPlan_pkey"
+    },
+    {
+      "tablename": "MembershipPlan",
+      "indexname": "MembershipPlan_slug_key"
+    },
+    {
+      "tablename": "Notification",
+      "indexname": "Notification_pkey"
+    },
+    {
+      "tablename": "Notification",
+      "indexname": "Notification_providerReference_key"
+    },
+    {
+      "tablename": "Notification",
+      "indexname": "Notification_sourceKey_key"
+    },
+    {
+      "tablename": "Notification",
+      "indexname": "Notification_status_nextAttemptAt_idx"
+    },
+    {
+      "tablename": "Notification",
+      "indexname": "Notification_userId_createdAt_id_idx"
+    },
+    {
+      "tablename": "Order",
+      "indexname": "Order_pkey"
+    },
+    {
+      "tablename": "Order",
+      "indexname": "Order_status_holdExpiresAt_idx"
+    },
+    {
+      "tablename": "Order",
+      "indexname": "Order_userId_createdAt_idx"
+    },
+    {
+      "tablename": "Order",
+      "indexname": "Order_userId_idempotencyKey_key"
+    },
+    {
+      "tablename": "OrderEvent",
+      "indexname": "OrderEvent_orderId_createdAt_idx"
+    },
+    {
+      "tablename": "OrderEvent",
+      "indexname": "OrderEvent_pkey"
+    },
+    {
+      "tablename": "OrderItem",
+      "indexname": "OrderItem_orderId_productId_key"
+    },
+    {
+      "tablename": "OrderItem",
+      "indexname": "OrderItem_pkey"
+    },
+    {
+      "tablename": "OtpChallenge",
+      "indexname": "OtpChallenge_phone_key"
+    },
+    {
+      "tablename": "OtpChallenge",
+      "indexname": "OtpChallenge_pkey"
+    },
+    {
+      "tablename": "PrivacyRequest",
+      "indexname": "PrivacyRequest_pkey"
+    },
+    {
+      "tablename": "PrivacyRequest",
+      "indexname": "PrivacyRequest_userId_createdAt_idx"
+    },
+    {
+      "tablename": "Program",
+      "indexname": "Program_pkey"
+    },
+    {
+      "tablename": "Program",
+      "indexname": "Program_published_categoryId_type_idx"
+    },
+    {
+      "tablename": "ProgramCategory",
+      "indexname": "ProgramCategory_name_key"
+    },
+    {
+      "tablename": "ProgramCategory",
+      "indexname": "ProgramCategory_pkey"
+    },
+    {
+      "tablename": "ProgramEnrollment",
+      "indexname": "ProgramEnrollment_pkey"
+    },
+    {
+      "tablename": "ProgramEnrollment",
+      "indexname": "ProgramEnrollment_userId_programId_key"
+    },
+    {
+      "tablename": "ProgramEnrollment",
+      "indexname": "ProgramEnrollment_userId_status_idx"
+    },
+    {
+      "tablename": "ProgramModule",
+      "indexname": "ProgramModule_pkey"
+    },
+    {
+      "tablename": "ProgramModule",
+      "indexname": "ProgramModule_programId_position_key"
+    },
+    {
+      "tablename": "ProviderEvent",
+      "indexname": "ProviderEvent_pkey"
+    },
+    {
+      "tablename": "ProviderEvent",
+      "indexname": "ProviderEvent_provider_eventId_key"
+    },
+    {
+      "tablename": "ProviderEvent",
+      "indexname": "ProviderEvent_status_createdAt_idx"
+    },
+    {
+      "tablename": "PushDevice",
+      "indexname": "PushDevice_pkey"
+    },
+    {
+      "tablename": "PushDevice",
+      "indexname": "PushDevice_sessionId_key"
+    },
+    {
+      "tablename": "PushDevice",
+      "indexname": "PushDevice_tokenHash_key"
+    },
+    {
+      "tablename": "PushDevice",
+      "indexname": "PushDevice_userId_idx"
+    },
+    {
+      "tablename": "Reminder",
+      "indexname": "Reminder_pkey"
+    },
+    {
+      "tablename": "Reminder",
+      "indexname": "Reminder_userId_completed_dueAt_idx"
+    },
+    {
+      "tablename": "RequestBudget",
+      "indexname": "RequestBudget_expiresAt_idx"
+    },
+    {
+      "tablename": "RequestBudget",
+      "indexname": "RequestBudget_pkey"
+    },
+    {
+      "tablename": "Session",
+      "indexname": "Session_expiresAt_idx"
+    },
+    {
+      "tablename": "Session",
+      "indexname": "Session_pkey"
+    },
+    {
+      "tablename": "Session",
+      "indexname": "Session_tokenHash_key"
+    },
+    {
+      "tablename": "Session",
+      "indexname": "Session_userId_idx"
+    },
+    {
+      "tablename": "Subscription",
+      "indexname": "Subscription_pkey"
+    },
+    {
+      "tablename": "Subscription",
+      "indexname": "Subscription_status_periodEnd_idx"
+    },
+    {
+      "tablename": "Subscription",
+      "indexname": "Subscription_userId_createdAt_idx"
+    },
+    {
+      "tablename": "Subscription",
+      "indexname": "Subscription_userId_requestKey_key"
+    },
+    {
+      "tablename": "Subscription",
+      "indexname": "one_open_membership_per_user"
+    },
+    {
+      "tablename": "SubscriptionEvent",
+      "indexname": "SubscriptionEvent_pkey"
+    },
+    {
+      "tablename": "SubscriptionEvent",
+      "indexname": "SubscriptionEvent_subscriptionId_createdAt_idx"
+    },
+    {
+      "tablename": "User",
+      "indexname": "User_phone_key"
+    },
+    {
+      "tablename": "User",
+      "indexname": "User_pkey"
+    },
+    {
+      "tablename": "UserRole",
+      "indexname": "UserRole_pkey"
+    },
+    {
+      "tablename": "WellnessCategory",
+      "indexname": "WellnessCategory_name_key"
+    },
+    {
+      "tablename": "WellnessCategory",
+      "indexname": "WellnessCategory_pkey"
+    },
+    {
+      "tablename": "WellnessCheckIn",
+      "indexname": "WellnessCheckIn_pkey"
+    },
+    {
+      "tablename": "WellnessCheckIn",
+      "indexname": "WellnessCheckIn_userId_date_key"
+    },
+    {
+      "tablename": "WellnessGoal",
+      "indexname": "WellnessGoal_pkey"
+    },
+    {
+      "tablename": "WellnessGoal",
+      "indexname": "WellnessGoal_userId_status_idx"
+    },
+    {
+      "tablename": "WellnessProduct",
+      "indexname": "WellnessProduct_pkey"
+    },
+    {
+      "tablename": "WellnessProduct",
+      "indexname": "WellnessProduct_sku_key"
+    },
+    {
+      "tablename": "WellnessProduct",
+      "indexname": "WellnessProduct_slug_key"
+    },
+    {
+      "tablename": "WellnessProduct",
+      "indexname": "WellnessProduct_status_categoryId_idx"
+    },
+    {
+      "tablename": "WhatsAppIdentity",
+      "indexname": "WhatsAppIdentity_pkey"
+    },
+    {
+      "tablename": "WhatsAppIdentity",
+      "indexname": "WhatsAppIdentity_waId_key"
+    },
+    {
+      "tablename": "WhatsAppLinkToken",
+      "indexname": "WhatsAppLinkToken_pkey"
+    },
+    {
+      "tablename": "WhatsAppLinkToken",
+      "indexname": "WhatsAppLinkToken_tokenHash_key"
+    },
+    {
+      "tablename": "WhatsAppReceipt",
+      "indexname": "WhatsAppReceipt_pkey"
+    },
+    {
+      "tablename": "_prisma_migrations",
+      "indexname": "_prisma_migrations_pkey"
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+import 'dart:io';
+import 'package:http/io_client.dart';
+import 'package:pocket_doctor/core/networking/health_repository.dart';
+import 'dart:convert';
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:pocket_doctor/app.dart';
+import 'package:pocket_doctor/core/storage/session_store.dart';
+import 'package:pocket_doctor/core/routing/app_router.dart';
+import 'package:pocket_doctor/features/auth/application/auth_controller.dart';
+import 'package:pocket_doctor/features/consultation/application/consultation_providers.dart';
+import '../test/helpers/auth_fakes.dart' show MemorySessionStore;
+
+void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
+  HttpOverrides.global = null; // Use real HTTP; no mocked backend transport.
+  Future<void> until(WidgetTester tester, Finder target) async {
+    for (var i = 0; i < 150; i++) {
+      await tester.pump(const Duration(milliseconds: 50));
+      if (target.evaluate().isNotEmpty) return;
+      await tester.runAsync(
+        () => Future<void>.delayed(const Duration(milliseconds: 100)),
+      );
+    }
+    fail('Screen not ready; contents withheld to avoid OTP disclosure.');
+  }
+
+  for (var i = 3; i <= 4; i++) {
+    testWidgets(
+      'Patient ${i == 3 ? 'A' : 'B'} real HTTP login and Home${i == 3 ? ', discovery and booking' : ''}',
+      (tester) async {
+        tester.view.physicalSize = const Size(1080, 2200);
+        tester.view.devicePixelRatio = 2;
+        addTearDown(tester.view.resetPhysicalSize);
+        addTearDown(tester.view.resetDevicePixelRatio);
+        final store = MemorySessionStore()..onboarded = true;
+        final liveClient = IOClient(HttpClient());
+        addTearDown(liveClient.close);
+        final container = ProviderContainer(
+          overrides: [
+            httpClientProvider.overrideWithValue(liveClient),
+            sessionStoreProvider.overrideWithValue(store),
+          ],
+        );
+        try {
+          await tester.pumpWidget(
+            UncontrolledProviderScope(
+              container: container,
+              child: const PocketDoctorApp(),
+            ),
+          );
+          await until(tester, find.byKey(const Key('phone-input')));
+          await tester.enterText(
+            find.byKey(const Key('phone-input')),
+            '999991800$i',
+          );
+          await tester.tap(find.text('Continue'));
+          await until(tester, find.byKey(const Key('development-code')));
+          final notice = tester
+              .widget<SelectableText>(find.byKey(const Key('development-code')))
+              .data!;
+          final code = RegExp(r'Code: (\d{6})').firstMatch(notice)!.group(1)!;
+          await tester.enterText(find.byKey(const Key('otp-input')), code);
+          await tester.tap(find.text('Verify & continue'));
+          await until(tester, find.text('Home'));
+          expect(
+            container.read(authProvider).user!.id,
+            '81000000-0000-4000-8000-${i.toString().padLeft(12, '0')}',
+          );
+          if (i == 3) {
+            container.read(appRouterProvider).go('/consult');
+            await until(tester, find.text('Search doctors'));
+            await tester.enterText(
+              find.byType(TextField).first,
+              'D-ENVIRONMENT Doctor A',
+            );
+            await tester.testTextInput.receiveAction(TextInputAction.search);
+            await until(tester, find.text('DEMO D-ENVIRONMENT Doctor A'));
+            await tester.ensureVisible(
+              find.text('DEMO D-ENVIRONMENT Doctor A'),
+            );
+            await tester.scrollUntilVisible(
+              find.text('View doctor & availability'),
+              400,
+              scrollable: find.byType(Scrollable).first,
+              maxScrolls: 30,
+            );
+            await tester.tap(find.text('View doctor & availability'));
+            await until(tester, find.text('Choose date & time'));
+            await tester.ensureVisible(find.text('Choose date & time'));
+            await tester.tap(find.text('Choose date & time'));
+            await until(tester, find.byType(ChoiceChip));
+            await tester.ensureVisible(find.byType(ChoiceChip).first);
+            await tester.tap(find.byType(ChoiceChip).first);
+            await tester.scrollUntilVisible(
+              find.text('Review reservation'),
+              400,
+              scrollable: find.byType(Scrollable).first,
+              maxScrolls: 40,
+            );
+            await tester.tap(find.text('Review reservation'));
+            await until(tester, find.text('Review your reservation'));
+            await tester.scrollUntilVisible(
+              find.text('Reserve this time'),
+              400,
+              scrollable: find.byType(Scrollable).first,
+              maxScrolls: 40,
+            );
+            await tester.ensureVisible(find.text('Reserve this time'));
+            await tester.tap(find.text('Reserve this time'));
+            await until(tester, find.text('Demo reservation booked'));
+            final route = container
+                .read(appRouterProvider)
+                .routeInformationProvider
+                .value
+                .uri
+                .path;
+            final records = await tester.runAsync(
+              () => container.read(consultationRepositoryProvider).mine(),
+            );
+            final id = route.split('/')[2];
+            expect(records!.any((r) => r.id == id), true);
+            await tester.runAsync(() async {
+              File(
+                '../../../../artifacts/e2e/patient-flutter-booking.json',
+              ).writeAsStringSync(
+                jsonEncode({
+                  'id': id,
+                  'route': route,
+                  'origin':
+                      'headless actual Flutter booking screen with real HTTP',
+                  'nativeDevice': false,
+                }),
+              );
+            });
+          }
+          await tester.runAsync(
+            () => container.read(authProvider.notifier).logout(),
+          );
+          await until(tester, find.byKey(const Key('phone-input')));
+          expect(store.token, isNull);
+        } finally {
+          await tester.pumpWidget(const SizedBox());
+          container.dispose();
+          liveClient.close();
+          await tester.pump(const Duration(seconds: 16));
+        }
+      },
+      timeout: const Timeout(Duration(minutes: 3)),
+    );
+  }
+}

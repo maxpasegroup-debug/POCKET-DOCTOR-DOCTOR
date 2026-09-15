@@ -1,0 +1,20 @@
+{
+  "backend": {
+    "passed": 127,
+    "skipped": 0,
+    "failed": 0
+  },
+  "patient": {
+    "passed": 89,
+    "skipped": 0,
+    "failed": 0
+  },
+  "doctor": {
+    "passed": 23,
+    "skipped": 0,
+    "failed": 0
+  },
+  "totalPassed": 239,
+  "acceptanceReplay": "BLOCKED",
+  "historicalAcceptanceFailures": 4
+}

@@ -1,0 +1,16 @@
+[
+  "services/api/prisma/schema.prisma",
+  "services/api/prisma/migrations/20260909100000_doctor_registration/migration.sql",
+  "services/api/src/modules/auth/identity-service.ts",
+  "services/api/src/modules/auth/doctor-session.ts",
+  "services/api/src/modules/auth/request-budget.ts",
+  "services/api/src/modules/doctor-registration/contracts.ts",
+  "services/api/src/modules/doctor-registration/service.ts",
+  "services/api/src/modules/doctor-registration/routes.ts",
+  "services/api/src/app.ts",
+  "services/api/src/modules/admin/routes.ts",
+  "services/api/src/modules/admin/queries.ts",
+  "services/api/test/doctor-registration.integration.test.ts",
+  "apps/admin-console/src/registration.ts",
+  "apps/admin-console/src/pages.ts"
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "label": "Doctor A",
+    "id": "81000000-0000-4000-8000-000000000001",
+    "role": "DOCTOR",
+    "otpLogin": "PASS",
+    "session": "PASS",
+    "doctorGate": 200,
+    "homeApi": "PASS: appointments"
+  },
+  {
+    "label": "Doctor B",
+    "id": "81000000-0000-4000-8000-000000000002",
+    "role": "DOCTOR",
+    "otpLogin": "PASS",
+    "session": "PASS",
+    "doctorGate": 200,
+    "homeApi": "PASS: appointments"
+  },
+  {
+    "label": "Patient A",
+    "id": "81000000-0000-4000-8000-000000000003",
+    "role": "USER",
+    "otpLogin": "PASS",
+    "session": "PASS",
+    "doctorGate": 403,
+    "homeApi": "NOT TESTED: Flutter Home"
+  },
+  {
+    "label": "Patient B",
+    "id": "81000000-0000-4000-8000-000000000004",
+    "role": "USER",
+    "otpLogin": "PASS",
+    "session": "PASS",
+    "doctorGate": 403,
+    "homeApi": "NOT TESTED: Flutter Home"
+  },
+  {
+    "label": "Admin",
+    "id": "81000000-0000-4000-8000-000000000005",
+    "role": "ADMIN",
+    "otpLogin": "PASS",
+    "session": "PASS",
+    "doctorGate": 403,
+    "homeApi": "NOT TESTED: Flutter Home"
+  }
+]

@@ -1,0 +1,14 @@
+{
+    "status":  "TEST ENVIRONMENT READY",
+    "database":  "existing verified loopback PostgreSQL test cluster",
+    "migrationCount":  14,
+    "backendPassed":  127,
+    "backendFailed":  0,
+    "backendSkipped":  0,
+    "doctorPassed":  23,
+    "doctorFailed":  0,
+    "doctorSkipped":  0,
+    "accounts":  5,
+    "fullMobileAcceptance":  "NOT PERFORMED",
+    "applicationSourceChanges":  0
+}

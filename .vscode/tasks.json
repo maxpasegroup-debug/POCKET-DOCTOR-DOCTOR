@@ -1,0 +1,30 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Doctor: build hosted testing APK",
+      "type": "shell",
+      "command": "flutter",
+      "args": [
+        "build",
+        "apk",
+        "--debug",
+        "--dart-define-from-file=config/hosted-testing.json"
+      ],
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Doctor: forward local API over USB",
+      "type": "process",
+      "command": "${env:LOCALAPPDATA}\\Android\\sdk\\platform-tools\\adb.exe",
+      "args": [
+        "-d",
+        "reverse",
+        "tcp:3018",
+        "tcp:3018"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}

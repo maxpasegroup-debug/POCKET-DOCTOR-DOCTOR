@@ -1,0 +1,26 @@
+[
+  {
+    "fixture": "3",
+    "requestCount": 5,
+    "windowEndsAt": "2026-09-09T05:46:22.006Z",
+    "checkedAt": "2026-09-09T05:19:52.670Z"
+  },
+  {
+    "fixture": "4",
+    "requestCount": 5,
+    "windowEndsAt": "2026-09-09T05:46:22.037Z",
+    "checkedAt": "2026-09-09T05:19:52.670Z"
+  },
+  {
+    "fixture": "1",
+    "requestCount": 5,
+    "windowEndsAt": "2026-09-09T05:46:21.611Z",
+    "checkedAt": "2026-09-09T05:19:52.670Z"
+  },
+  {
+    "fixture": "2",
+    "requestCount": 5,
+    "windowEndsAt": "2026-09-09T05:46:21.939Z",
+    "checkedAt": "2026-09-09T05:19:52.670Z"
+  }
+]

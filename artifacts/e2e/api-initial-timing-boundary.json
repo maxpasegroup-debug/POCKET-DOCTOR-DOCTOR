@@ -1,0 +1,462 @@
+{
+  "scope": "Actual HTTP and database acceptance, not Flutter UI",
+  "appointmentId": "49b7b186-d455-4347-b12e-437e5bc01fca",
+  "outcomes": [
+    {
+      "label": "Doctor A OTP request",
+      "actor": "Doctor A",
+      "method": "POST",
+      "route": "/auth/otp/request",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "label": "Doctor A OTP verify",
+      "actor": "Doctor A",
+      "method": "POST",
+      "route": "/auth/otp/verify",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "label": "Doctor B OTP request",
+      "actor": "Doctor B",
+      "method": "POST",
+      "route": "/auth/otp/request",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "label": "Doctor B OTP verify",
+      "actor": "Doctor B",
+      "method": "POST",
+      "route": "/auth/otp/verify",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "label": "Patient A OTP request",
+      "actor": "Patient A",
+      "method": "POST",
+      "route": "/auth/otp/request",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "label": "Patient A OTP verify",
+      "actor": "Patient A",
+      "method": "POST",
+      "route": "/auth/otp/verify",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "label": "Patient B OTP request",
+      "actor": "Patient B",
+      "method": "POST",
+      "route": "/auth/otp/request",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "label": "Patient B OTP verify",
+      "actor": "Patient B",
+      "method": "POST",
+      "route": "/auth/otp/verify",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "label": "Admin OTP request",
+      "actor": "Admin",
+      "method": "POST",
+      "route": "/auth/otp/request",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "label": "Admin OTP verify",
+      "actor": "Admin",
+      "method": "POST",
+      "route": "/auth/otp/verify",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "label": "Unauthenticated Doctor access",
+      "actor": "none",
+      "method": "GET",
+      "route": "/doctor/appointments",
+      "expected": 401,
+      "actual": 401,
+      "pass": true
+    },
+    {
+      "label": "Invalid session",
+      "actor": "invalid",
+      "method": "GET",
+      "route": "/doctor/appointments",
+      "expected": 401,
+      "actual": 401,
+      "pass": true
+    },
+    {
+      "label": "Patient denied Doctor",
+      "actor": "Patient A",
+      "method": "GET",
+      "route": "/doctor/appointments",
+      "expected": 403,
+      "actual": 403,
+      "pass": true
+    },
+    {
+      "label": "Doctor denied Admin",
+      "actor": "Doctor A",
+      "method": "GET",
+      "route": "/admin/operations/doctors",
+      "expected": 403,
+      "actual": 403,
+      "pass": true
+    },
+    {
+      "label": "Admin Doctor management",
+      "actor": "Admin",
+      "method": "GET",
+      "route": "/admin/operations/doctors",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "label": "Doctor A READY",
+      "actor": "Doctor A",
+      "method": "GET",
+      "route": "/doctor/session",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "label": "Doctor A real agenda",
+      "actor": "Doctor A",
+      "method": "GET",
+      "route": "/doctor/appointments",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "label": "Doctor B READY",
+      "actor": "Doctor B",
+      "method": "GET",
+      "route": "/doctor/session",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "label": "Doctor B real agenda",
+      "actor": "Doctor B",
+      "method": "GET",
+      "route": "/doctor/appointments",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "label": "Doctor B profile baseline",
+      "actor": "Doctor B",
+      "method": "GET",
+      "route": "/doctor/profile",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "label": "Doctor B availability baseline",
+      "actor": "Doctor B",
+      "method": "GET",
+      "route": "/doctor/availability",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "label": "Doctor A profile save",
+      "actor": "Doctor A",
+      "method": "PATCH",
+      "route": "/doctor/profile",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "label": "Doctor A profile reload",
+      "actor": "Doctor A",
+      "method": "GET",
+      "route": "/doctor/profile",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "label": "Reject profile target injection",
+      "actor": "Doctor A",
+      "method": "PATCH",
+      "route": "/doctor/profile",
+      "expected": 400,
+      "actual": 400,
+      "pass": true
+    },
+    {
+      "label": "Doctor B profile unchanged",
+      "actor": "Doctor B",
+      "method": "GET",
+      "route": "/doctor/profile",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "label": "Doctor A availability save",
+      "actor": "Doctor A",
+      "method": "POST",
+      "route": "/doctor/availability",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "label": "Doctor A availability reload",
+      "actor": "Doctor A",
+      "method": "GET",
+      "route": "/doctor/availability",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "label": "Reject availability target injection",
+      "actor": "Doctor A",
+      "method": "POST",
+      "route": "/doctor/availability",
+      "expected": 400,
+      "actual": 400,
+      "pass": true
+    },
+    {
+      "label": "Doctor B availability unchanged",
+      "actor": "Doctor B",
+      "method": "GET",
+      "route": "/doctor/availability",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "label": "Patient discovers Doctor A",
+      "actor": "Patient A",
+      "method": "GET",
+      "route": "/doctors?q=D-ENVIRONMENT",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "label": "Patient Doctor profile",
+      "actor": "Patient A",
+      "method": "GET",
+      "route": "/doctors/82000000-0000-4000-8000-000000000001",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "label": "Excluded date has no slots",
+      "actor": "Patient A",
+      "method": "GET",
+      "route": "/doctors/82000000-0000-4000-8000-000000000001/slots?date=2026-09-12",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "label": "Backend-generated current slots",
+      "actor": "Patient A",
+      "method": "GET",
+      "route": "/doctors/82000000-0000-4000-8000-000000000001/slots?date=2026-09-09",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "label": "Patient A books via actual API",
+      "actor": "Patient A",
+      "method": "POST",
+      "route": "/consultations/book",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "label": "Doctor A sees same booking",
+      "actor": "Doctor A",
+      "method": "GET",
+      "route": "/doctor/appointments",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "label": "Patient B denied Patient A appointment",
+      "actor": "Patient B",
+      "method": "GET",
+      "route": "/me/consultations/49b7b186-d455-4347-b12e-437e5bc01fca",
+      "expected": 404,
+      "actual": 404,
+      "pass": true
+    },
+    {
+      "label": "Doctor B denied Patient A context",
+      "actor": "Doctor B",
+      "method": "POST",
+      "route": "/doctor/consultations/49b7b186-d455-4347-b12e-437e5bc01fca/access",
+      "expected": 404,
+      "actual": 404,
+      "pass": true
+    },
+    {
+      "label": "Doctor B denied private note mutation",
+      "actor": "Doctor B",
+      "method": "POST",
+      "route": "/doctor/consultations/49b7b186-d455-4347-b12e-437e5bc01fca/notes",
+      "expected": 404,
+      "actual": 404,
+      "pass": true
+    },
+    {
+      "label": "Patient denied private Doctor note API",
+      "actor": "Patient A",
+      "method": "POST",
+      "route": "/doctor/consultations/49b7b186-d455-4347-b12e-437e5bc01fca/notes",
+      "expected": 403,
+      "actual": 403,
+      "pass": true
+    },
+    {
+      "label": "Valid demo start",
+      "actor": "Doctor A",
+      "method": "POST",
+      "route": "/doctor/consultations/49b7b186-d455-4347-b12e-437e5bc01fca/action",
+      "expected": 200,
+      "actual": 409,
+      "pass": false
+    },
+    {
+      "label": "Journey exception",
+      "pass": false,
+      "type": "AssertionError",
+      "message": "Details withheld; inspect preceding status and source assertions"
+    },
+    {
+      "label": "Doctor A logout",
+      "actor": "Doctor A",
+      "method": "POST",
+      "route": "/auth/logout",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "label": "Doctor A revoked session denied",
+      "actor": "Doctor A",
+      "method": "GET",
+      "route": "/auth/session",
+      "expected": 401,
+      "actual": 401,
+      "pass": true
+    },
+    {
+      "label": "Doctor B logout",
+      "actor": "Doctor B",
+      "method": "POST",
+      "route": "/auth/logout",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "label": "Doctor B revoked session denied",
+      "actor": "Doctor B",
+      "method": "GET",
+      "route": "/auth/session",
+      "expected": 401,
+      "actual": 401,
+      "pass": true
+    },
+    {
+      "label": "Patient A logout",
+      "actor": "Patient A",
+      "method": "POST",
+      "route": "/auth/logout",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "label": "Patient A revoked session denied",
+      "actor": "Patient A",
+      "method": "GET",
+      "route": "/auth/session",
+      "expected": 401,
+      "actual": 401,
+      "pass": true
+    },
+    {
+      "label": "Patient B logout",
+      "actor": "Patient B",
+      "method": "POST",
+      "route": "/auth/logout",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "label": "Patient B revoked session denied",
+      "actor": "Patient B",
+      "method": "GET",
+      "route": "/auth/session",
+      "expected": 401,
+      "actual": 401,
+      "pass": true
+    },
+    {
+      "label": "Admin logout",
+      "actor": "Admin",
+      "method": "POST",
+      "route": "/auth/logout",
+      "expected": 200,
+      "actual": 200,
+      "pass": true
+    },
+    {
+      "label": "Admin revoked session denied",
+      "actor": "Admin",
+      "method": "GET",
+      "route": "/auth/session",
+      "expected": 401,
+      "actual": 401,
+      "pass": true
+    }
+  ]
+}

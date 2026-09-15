@@ -1,0 +1,21 @@
+﻿{
+    "configuration":  {
+                          "processDatabaseUrl":  false,
+                          "userDatabaseUrl":  false,
+                          "machineDatabaseUrl":  false,
+                          "environmentFiles":  [
+
+                                               ],
+                          "databaseCreated":  false
+                      },
+    "platformCommit":  "435a68496d0fe69a3754fadfeddc276fe593884e",
+    "sourceGitStatus":  [
+
+                        ],
+    "comparedCodeFiles":  186,
+    "comparison":  "Tracked Dart, TypeScript and Prisma source/test files; CRLF/LF normalized only",
+    "snapshotCodeDifferences":  [
+
+                                ],
+    "platformSourceModifiedByClosure":  false
+}

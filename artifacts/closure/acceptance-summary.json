@@ -1,0 +1,26 @@
+﻿{
+    "decision":  "MIGRATION INCOMPLETE",
+    "closureTestsDate":  "2026-09-08",
+    "reportDate":  "2026-09-09",
+    "databaseValidation":  "BLOCKED",
+    "deviceValidation":  "BLOCKED",
+    "deviceReason":  "Cold boot completed; streamed install failed with broken pipe; non-streaming install stalled and was cancelled after emulator shutdown",
+    "androidReleaseCompilation":  "PASS",
+    "androidStoreSigning":  "BLOCKED",
+    "iosValidation":  "BLOCKED",
+    "approvedBrandAsset":  "REQUIRED",
+    "tests":  {
+                  "patientSkipped":  7,
+                  "backendSkipped":  13,
+                  "adminPassed":  16,
+                  "patientPassed":  82,
+                  "doctorPassed":  23,
+                  "totalSkipped":  20,
+                  "totalPassed":  149,
+                  "backendPassed":  28,
+                  "totalFailed":  0
+              },
+    "applicationSourceModified":  false,
+    "testsDeleted":  false,
+    "skipConditionsModified":  false
+}

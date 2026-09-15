@@ -1,0 +1,52 @@
+{
+  "otpMode": "development",
+  "windows": [
+    {
+      "requestCount": 5,
+      "windowEndsAt": "2026-09-09T05:46:22.006Z",
+      "checkedAt": "2026-09-09T05:38:48.588Z",
+      "blocked": true
+    },
+    {
+      "requestCount": 5,
+      "windowEndsAt": "2026-09-09T05:46:22.037Z",
+      "checkedAt": "2026-09-09T05:38:48.588Z",
+      "blocked": true
+    },
+    {
+      "requestCount": 5,
+      "windowEndsAt": "2026-09-09T05:46:21.611Z",
+      "checkedAt": "2026-09-09T05:38:48.588Z",
+      "blocked": true
+    },
+    {
+      "requestCount": 5,
+      "windowEndsAt": "2026-09-09T05:46:21.939Z",
+      "checkedAt": "2026-09-09T05:38:48.588Z",
+      "blocked": true
+    }
+  ],
+  "accounts": [
+    {
+      "id": "81000000-0000-4000-8000-000000000001",
+      "role": "DOCTOR"
+    },
+    {
+      "id": "81000000-0000-4000-8000-000000000002",
+      "role": "DOCTOR"
+    },
+    {
+      "id": "81000000-0000-4000-8000-000000000003",
+      "role": "USER"
+    },
+    {
+      "id": "81000000-0000-4000-8000-000000000004",
+      "role": "USER"
+    },
+    {
+      "id": "81000000-0000-4000-8000-000000000005",
+      "role": "ADMIN"
+    }
+  ],
+  "unauthenticatedStatus": 401
+}

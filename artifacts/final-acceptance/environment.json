@@ -1,0 +1,31 @@
+{
+  "database": "verified loopback test database",
+  "otpMode": "development",
+  "otpWindows": [
+    {
+      "requestCount": 5,
+      "windowEndsAt": "2026-09-09T05:46:22.006Z",
+      "checkedAt": "2026-09-09T05:29:41.184Z",
+      "blocked": true
+    },
+    {
+      "requestCount": 5,
+      "windowEndsAt": "2026-09-09T05:46:22.037Z",
+      "checkedAt": "2026-09-09T05:29:41.184Z",
+      "blocked": true
+    },
+    {
+      "requestCount": 5,
+      "windowEndsAt": "2026-09-09T05:46:21.611Z",
+      "checkedAt": "2026-09-09T05:29:41.184Z",
+      "blocked": true
+    },
+    {
+      "requestCount": 5,
+      "windowEndsAt": "2026-09-09T05:46:21.939Z",
+      "checkedAt": "2026-09-09T05:29:41.184Z",
+      "blocked": true
+    }
+  ],
+  "unauthenticatedDoctorStatus": 401
+}

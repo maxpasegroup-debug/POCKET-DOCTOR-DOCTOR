@@ -1,0 +1,59 @@
+{
+  "scope": "Real HTTP API; no Flutter/device acceptance claim",
+  "documentsDeferred": true,
+  "results": [
+    {
+      "test": "OTP request",
+      "http": 200
+    },
+    {
+      "test": "OTP verification",
+      "http": 200
+    },
+    {
+      "test": "/doctor/session",
+      "http": 200,
+      "expected": 200,
+      "status": "PASS",
+      "durationMs": 18,
+      "sessionState": "READY"
+    },
+    {
+      "test": "/doctor/profile",
+      "http": 200,
+      "expected": 200,
+      "status": "PASS",
+      "durationMs": 10
+    },
+    {
+      "test": "/doctor/availability",
+      "http": 200,
+      "expected": 200,
+      "status": "PASS",
+      "durationMs": 44
+    },
+    {
+      "test": "/doctor/appointments",
+      "http": 200,
+      "expected": 200,
+      "status": "PASS",
+      "durationMs": 125
+    },
+    {
+      "test": "/admin/operations/doctors",
+      "http": 403,
+      "expected": 403,
+      "status": "PASS",
+      "durationMs": 105
+    },
+    {
+      "test": "Logout",
+      "http": 200
+    },
+    {
+      "test": "Logged-out protected request",
+      "http": 401,
+      "status": "PASS"
+    }
+  ]
+}

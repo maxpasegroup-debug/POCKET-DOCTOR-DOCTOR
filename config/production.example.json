@@ -1,0 +1,4 @@
+{
+  "API_BASE_URL": "https://replace-with-deployed-api.example/api/v1",
+  "SHOW_DEVELOPMENT_OTP": "false"
+}

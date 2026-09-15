@@ -1,0 +1,58 @@
+[
+    {
+        "migration":  "20260905000000_identity_foundation\\migration.sql",
+        "matchesSource":  false
+    },
+    {
+        "migration":  "20260905010000_authentication_profile\\migration.sql",
+        "matchesSource":  false
+    },
+    {
+        "migration":  "20260907010000_program_ecosystem\\migration.sql",
+        "matchesSource":  false
+    },
+    {
+        "migration":  "20260907020000_consultations\\migration.sql",
+        "matchesSource":  false
+    },
+    {
+        "migration":  "20260907030000_wellness_commerce\\migration.sql",
+        "matchesSource":  false
+    },
+    {
+        "migration":  "20260907050000_ai_companion\\migration.sql",
+        "matchesSource":  false
+    },
+    {
+        "migration":  "20260907060000_membership\\migration.sql",
+        "matchesSource":  false
+    },
+    {
+        "migration":  "20260907060100_membership_receipts\\migration.sql",
+        "matchesSource":  false
+    },
+    {
+        "migration":  "20260907060200_membership_retry\\migration.sql",
+        "matchesSource":  false
+    },
+    {
+        "migration":  "20260908070000_operations\\migration.sql",
+        "matchesSource":  false
+    },
+    {
+        "migration":  "20260908070100_mfa_attempts\\migration.sql",
+        "matchesSource":  false
+    },
+    {
+        "migration":  "20260908070200_consent_retention\\migration.sql",
+        "matchesSource":  false
+    },
+    {
+        "migration":  "20260908070300_request_budgets\\migration.sql",
+        "matchesSource":  false
+    },
+    {
+        "migration":  "20260909070000_provider_push\\migration.sql",
+        "matchesSource":  false
+    }
+]

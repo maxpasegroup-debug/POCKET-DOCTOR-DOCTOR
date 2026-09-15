@@ -1,0 +1,10 @@
+{
+  "otp": 200,
+  "roles": [
+    "DOCTOR"
+  ],
+  "doctorSession": 200,
+  "state": "READY",
+  "status": "PASS",
+  "scope": "Real HTTP login/session; no native UI claim"
+}

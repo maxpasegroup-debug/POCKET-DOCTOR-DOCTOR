@@ -1,0 +1,38 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Doctor - Hosted staging (Railway)",
+      "type": "dart",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "flutterMode": "debug",
+      "toolArgs": [
+        "--dart-define-from-file=config/hosted-testing.json"
+      ]
+    },
+    {
+      "name": "Doctor - Android emulator (local test API)",
+      "type": "dart",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "flutterMode": "debug",
+      "toolArgs": [
+        "--dart-define=API_BASE_URL=http://10.0.2.2:3018/api/v1",
+        "--dart-define=SHOW_DEVELOPMENT_OTP=true"
+      ]
+    },
+    {
+      "name": "Doctor - USB phone (local test API)",
+      "type": "dart",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "flutterMode": "debug",
+      "preLaunchTask": "Doctor: forward local API over USB",
+      "toolArgs": [
+        "--dart-define=API_BASE_URL=http://127.0.0.1:3018/api/v1",
+        "--dart-define=SHOW_DEVELOPMENT_OTP=true"
+      ]
+    }
+  ]
+}

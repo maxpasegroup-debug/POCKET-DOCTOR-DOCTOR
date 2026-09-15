@@ -1,0 +1,11 @@
+{
+  "comparison": "UTF8 normalized; generated Prisma client excluded",
+  "counts": {
+    "services/api/src": 56,
+    "services/api/test": 16,
+    "services/api/prisma": 17,
+    "apps/mobile/lib": 77,
+    "apps/admin-console/src": 10
+  },
+  "mismatch": []
+}

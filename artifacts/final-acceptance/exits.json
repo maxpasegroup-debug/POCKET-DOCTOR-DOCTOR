@@ -1,0 +1,12 @@
+{
+    "patient":  {
+                    "analyze":  0,
+                    "build":  0,
+                    "tests":  0
+                },
+    "doctor":  {
+                   "analyze":  0,
+                   "build":  0,
+                   "tests":  0
+               }
+}

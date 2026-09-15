@@ -1,0 +1,107 @@
+[
+    {
+        "scope":  "Process",
+        "name":  "DATABASE_URL",
+        "configured":  false
+    },
+    {
+        "scope":  "Process",
+        "name":  "TEST_DATABASE_URL",
+        "configured":  false
+    },
+    {
+        "scope":  "Process",
+        "name":  "DIRECT_URL",
+        "configured":  false
+    },
+    {
+        "scope":  "Process",
+        "name":  "POSTGRES_URL",
+        "configured":  false
+    },
+    {
+        "scope":  "Process",
+        "name":  "PGHOST",
+        "configured":  false
+    },
+    {
+        "scope":  "Process",
+        "name":  "PGDATABASE",
+        "configured":  false
+    },
+    {
+        "scope":  "Process",
+        "name":  "PGSERVICE",
+        "configured":  false
+    },
+    {
+        "scope":  "User",
+        "name":  "DATABASE_URL",
+        "configured":  false
+    },
+    {
+        "scope":  "User",
+        "name":  "TEST_DATABASE_URL",
+        "configured":  false
+    },
+    {
+        "scope":  "User",
+        "name":  "DIRECT_URL",
+        "configured":  false
+    },
+    {
+        "scope":  "User",
+        "name":  "POSTGRES_URL",
+        "configured":  false
+    },
+    {
+        "scope":  "User",
+        "name":  "PGHOST",
+        "configured":  false
+    },
+    {
+        "scope":  "User",
+        "name":  "PGDATABASE",
+        "configured":  false
+    },
+    {
+        "scope":  "User",
+        "name":  "PGSERVICE",
+        "configured":  false
+    },
+    {
+        "scope":  "Machine",
+        "name":  "DATABASE_URL",
+        "configured":  false
+    },
+    {
+        "scope":  "Machine",
+        "name":  "TEST_DATABASE_URL",
+        "configured":  false
+    },
+    {
+        "scope":  "Machine",
+        "name":  "DIRECT_URL",
+        "configured":  false
+    },
+    {
+        "scope":  "Machine",
+        "name":  "POSTGRES_URL",
+        "configured":  false
+    },
+    {
+        "scope":  "Machine",
+        "name":  "PGHOST",
+        "configured":  false
+    },
+    {
+        "scope":  "Machine",
+        "name":  "PGDATABASE",
+        "configured":  false
+    },
+    {
+        "scope":  "Machine",
+        "name":  "PGSERVICE",
+        "configured":  false
+    }
+]

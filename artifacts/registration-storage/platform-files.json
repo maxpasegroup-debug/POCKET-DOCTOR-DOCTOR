@@ -1,0 +1,9 @@
+[
+  "services/api/src/modules/doctor-registration/local-store.ts",
+  "services/api/src/modules/doctor-registration/contracts.ts",
+  "services/api/src/modules/doctor-registration/service.ts",
+  "services/api/src/config/env.ts",
+  "services/api/src/server.ts",
+  "services/api/test/doctor-credential-storage.test.ts",
+  "services/api/test/doctor-registration.integration.test.ts"
+]

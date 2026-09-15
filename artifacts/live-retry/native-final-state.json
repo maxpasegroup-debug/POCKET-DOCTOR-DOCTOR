@@ -1,0 +1,13 @@
+{
+  "appointment": [
+    {
+      "id": "806a5c75-f39c-46d2-a94b-ca188e66dc20",
+      "userId": "81000000-0000-4000-8000-000000000003",
+      "doctorId": "82000000-0000-4000-8000-000000000001",
+      "startsAt": "2026-09-10T03:30:00.000Z",
+      "status": "CONFIRMED"
+    }
+  ],
+  "doctorARemainingSessions": 4,
+  "unauthenticatedDoctorApiStatus": 401
+}

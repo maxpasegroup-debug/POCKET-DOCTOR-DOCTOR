@@ -1,0 +1,17 @@
+{
+  "regression": {
+    "passed": 239,
+    "failed": 0,
+    "skipped": 0
+  },
+  "liveAcceptance": {
+    "passed": 3,
+    "failed": 1,
+    "skipped": 0
+  },
+  "combined": {
+    "passed": 242,
+    "failed": 1,
+    "skipped": 0
+  }
+}

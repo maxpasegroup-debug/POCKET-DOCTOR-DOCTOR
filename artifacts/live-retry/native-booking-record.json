@@ -1,0 +1,23 @@
+{
+  "origin": "Patient Flutter native UI confirmation; read-only post-booking verification",
+  "appointments": [
+    {
+      "id": "806a5c75-f39c-46d2-a94b-ca188e66dc20",
+      "userId": "81000000-0000-4000-8000-000000000003",
+      "doctorId": "82000000-0000-4000-8000-000000000001",
+      "startsAt": "2026-09-10T03:30:00.000Z",
+      "endsAt": "2026-09-10T03:40:00.000Z",
+      "status": "CONFIRMED",
+      "createdAt": "2026-09-09T06:13:30.276Z"
+    },
+    {
+      "id": "49b7b186-d455-4347-b12e-437e5bc01fca",
+      "userId": "81000000-0000-4000-8000-000000000003",
+      "doctorId": "82000000-0000-4000-8000-000000000001",
+      "startsAt": "2026-09-09T05:12:00.000Z",
+      "endsAt": "2026-09-09T05:22:00.000Z",
+      "status": "CONFIRMED",
+      "createdAt": "2026-09-09T04:56:18.672Z"
+    }
+  ]
+}

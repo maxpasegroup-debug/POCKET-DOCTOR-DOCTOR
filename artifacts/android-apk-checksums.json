@@ -1,0 +1,12 @@
+﻿[
+    {
+        "file":  "build/app/outputs/flutter-apk/app-debug.apk",
+        "bytes":  181363427,
+        "sha256":  "b4bbb934ea1e40384b853e342f208c53302f0b45f71dd424224929df8ce75094"
+    },
+    {
+        "file":  "build/app/outputs/flutter-apk/app-release.apk",
+        "bytes":  53066252,
+        "sha256":  "f16fd1970a9e6ad837b9eac0e4eae7b8543ad0ae6b6023fe0781328b8daa2247"
+    }
+]

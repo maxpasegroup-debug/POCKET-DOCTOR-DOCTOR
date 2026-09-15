@@ -1,0 +1,20 @@
+{
+  "platformFilesCompared": 14,
+  "platformMismatches": [],
+  "apks": [
+    {
+      "app": "Doctor",
+      "id": "com.pocketdoctor.pocket_doctor_doctor",
+      "path": "build/app/outputs/flutter-apk/app-debug.apk",
+      "bytes": 220316157,
+      "sha256": "e4d82fba81dd5a40b229af58f4c95d798a465b29838f1b5ee9ccf43b7b995734"
+    },
+    {
+      "app": "Patient",
+      "id": "com.pocketdoctor.pocket_doctor",
+      "path": ".validation/platform/apps/mobile/build/app/outputs/flutter-apk/app-debug.apk",
+      "bytes": 206114057,
+      "sha256": "9a2c9bbad992456c6524eb59bedd73202e36988a639b953d75f71cce83370506"
+    }
+  ]
+}

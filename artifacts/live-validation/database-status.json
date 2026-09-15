@@ -1,0 +1,10 @@
+{
+    "migrationCount":  14,
+    "postgresProcessPresent":  false,
+    "testDatabaseConfigured":  false,
+    "historicalClustersFound":  true,
+    "historicalCredentialsRemovedPerReports":  true,
+    "databaseStarted":  false,
+    "migrationsApplied":  false,
+    "testAccountsCreated":  false
+}

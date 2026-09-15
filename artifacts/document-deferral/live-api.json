@@ -1,0 +1,84 @@
+{
+  "scope": "Real HTTP API acceptance; NOT native Flutter UI acceptance",
+  "applicationId": "e351a80a-aa1c-40a8-8146-9a203659b20d",
+  "results": [
+    {
+      "test": "OTP request Doctor",
+      "http": 200,
+      "expected": 200,
+      "status": "PASS"
+    },
+    {
+      "test": "OTP verify Doctor",
+      "http": 200,
+      "expected": 200,
+      "status": "PASS"
+    },
+    {
+      "test": "Read draft",
+      "http": 200,
+      "expected": 200,
+      "status": "PASS"
+    },
+    {
+      "test": "Save professional details",
+      "http": 200,
+      "expected": 200,
+      "status": "PASS"
+    },
+    {
+      "test": "Submit without documents",
+      "http": 200,
+      "expected": 200,
+      "status": "PASS"
+    },
+    {
+      "test": "Pending operational denial",
+      "http": 403,
+      "expected": 403,
+      "status": "PASS"
+    },
+    {
+      "test": "Doctor cannot approve",
+      "http": 403,
+      "expected": 403,
+      "status": "PASS"
+    },
+    {
+      "test": "OTP request Admin",
+      "http": 200,
+      "expected": 200,
+      "status": "PASS"
+    },
+    {
+      "test": "OTP verify Admin",
+      "http": 200,
+      "expected": 200,
+      "status": "PASS"
+    },
+    {
+      "test": "Admin application review",
+      "http": 200,
+      "expected": 200,
+      "status": "PASS"
+    },
+    {
+      "test": "Existing Admin approval",
+      "http": 200,
+      "expected": 200,
+      "status": "PASS"
+    },
+    {
+      "test": "Verified appointments/Home API",
+      "http": 200,
+      "expected": 200,
+      "status": "PASS"
+    },
+    {
+      "test": "Verified profile API",
+      "http": 200,
+      "expected": 200,
+      "status": "PASS"
+    }
+  ]
+}

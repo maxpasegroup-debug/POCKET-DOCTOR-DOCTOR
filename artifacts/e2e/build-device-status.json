@@ -1,0 +1,5 @@
+{
+    "doctorDebug":  "PASS",
+    "patientDebug":  "INTERRUPTED after no completion during observation; see build log",
+    "device":  "BLOCKED - no connected Android device"
+}
