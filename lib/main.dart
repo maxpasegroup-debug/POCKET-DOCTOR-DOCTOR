@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:timezone/data/latest_all.dart' as tz;
 import 'app.dart';
@@ -11,6 +12,9 @@ void main() {
   tz.initializeTimeZones();
   try {
     final config = AppConfig(const String.fromEnvironment('API_BASE_URL'));
+    if (kDebugMode) {
+      debugPrint('Doctor API host: ${Uri.parse(config.baseUrl).host}');
+    }
     runApp(
       ProviderScope(
         overrides: [apiProvider.overrideWithValue(ApiClient(config.baseUrl))],

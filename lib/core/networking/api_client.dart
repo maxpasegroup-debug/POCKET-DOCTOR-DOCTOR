@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import '../errors/api_failure.dart';
 
@@ -43,7 +44,27 @@ class ApiClient {
           .send(request)
           .then(http.Response.fromStream)
           .timeout(requestTimeout ?? timeout);
-    } catch (_) {
+    } catch (error) {
+      if (kDebugMode) {
+        // Classify locally; never log raw errors, URLs, request bodies or headers.
+        final detail = error.toString().toLowerCase();
+        final category = error is TimeoutException
+            ? 'timeout'
+            : detail.contains('failed host lookup') ||
+                  detail.contains('name resolution')
+            ? 'dns'
+            : detail.contains('handshake') || detail.contains('certificate')
+            ? 'tls'
+            : detail.contains('refused')
+            ? 'connection-refused'
+            : detail.contains('network is unreachable') ||
+                  detail.contains('no route')
+            ? 'network-unreachable'
+            : 'transport';
+        debugPrint(
+          'Doctor network failure: host=${request.url.host}; category=$category',
+        );
+      }
       throw const ApiFailure(
         'We could not connect. Check your connection and try again.',
       );
