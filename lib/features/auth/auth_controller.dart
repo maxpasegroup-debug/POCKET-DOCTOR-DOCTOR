@@ -82,7 +82,7 @@ class AuthController extends Notifier<AuthState> {
       ref.read(apiProvider).setToken(token);
       await _resolve(ticket);
     } catch (_) {
-      if (ticket == _epoch) {
+      if (ticket == _epoch && state.loading) {
         state = AuthState(
           message: 'Could not restore your session. Retry or sign in again.',
           generation: ticket,
@@ -91,11 +91,14 @@ class AuthController extends Notifier<AuthState> {
     }
   }
 
-  Future<void> _resolve(int ticket) async {
+  Future<void> _resolve(int ticket, {int? sessionGeneration}) async {
     try {
       final session = await _repository.session();
       if (ticket == _epoch) {
-        state = AuthState(session: session, generation: ticket);
+        state = AuthState(
+          session: session,
+          generation: sessionGeneration ?? ticket,
+        );
       }
     } on ApiFailure catch (error) {
       if (ticket != _epoch) return;
@@ -144,10 +147,17 @@ class AuthController extends Notifier<AuthState> {
   }
 
   Future<void> refresh() async {
+    final sessionGeneration = state.generation;
     final ticket = ++_epoch;
-    state = AuthState(loading: true, generation: ticket);
+    // Retain the mounted screen under SessionGate's blocking privacy cover
+    // until the server accepts the session or the existing failure path clears it.
+    state = AuthState(
+      loading: true,
+      session: state.session,
+      generation: sessionGeneration,
+    );
     try {
-      await _resolve(ticket);
+      await _resolve(ticket, sessionGeneration: sessionGeneration);
     } catch (_) {
       if (ticket == _epoch && state.loading) {
         state = AuthState(

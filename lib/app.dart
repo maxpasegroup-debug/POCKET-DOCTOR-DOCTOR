@@ -61,15 +61,29 @@ class _SessionGateState extends ConsumerState<SessionGate>
   @override
   Widget build(BuildContext context) {
     final auth = ref.watch(authProvider);
-    if (obscured || auth.loading) {
-      return const Scaffold(
-        body: Center(
-          child: CircularProgressIndicator(
-            semanticsLabel: 'Checking your session',
-          ),
+    final covered = obscured || auth.loading;
+    return Stack(
+      fit: StackFit.expand,
+      children: [
+        // Keep the form alive while a native picker covers the app. Offstage
+        // also removes its contents from painting, hit testing and semantics.
+        ExcludeFocus(
+          excluding: covered,
+          child: Offstage(offstage: covered, child: _content(auth)),
         ),
-      );
-    }
+        if (covered)
+          const Scaffold(
+            body: Center(
+              child: CircularProgressIndicator(
+                semanticsLabel: 'Checking your session',
+              ),
+            ),
+          ),
+      ],
+    );
+  }
+
+  Widget _content(AuthState auth) {
     if (auth.session == null) return LoginScreen(message: auth.message);
     if (auth.session!.registrationRequired) return const RegistrationScreen();
     if (!auth.session!.ready) {

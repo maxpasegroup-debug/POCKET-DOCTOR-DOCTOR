@@ -403,4 +403,55 @@ void main() {
       expect(container.read(authProvider).message, contains('connect'));
     },
   );
+  for (final failure in ['offline', 'server unavailable']) {
+    test(
+      'draft startup preserves $failure error and restores on retry',
+      () async {
+        var unavailable = true;
+        final store = MemoryStore()..token = 'saved-draft-session';
+        final api = ApiClient(
+          'https://example.test/api/v1',
+          transport: MockClient((request) async {
+            expect(request.url.path, '/api/v1/doctor/session');
+            if (unavailable) {
+              if (failure == 'offline') throw http.ClientException('offline');
+              return http.Response('', 503);
+            }
+            return ok({
+              'status': 'PENDING_VERIFICATION',
+              'doctor': null,
+              'registration': {'required': true, 'status': 'DRAFT'},
+            });
+          }),
+        );
+        final container = ProviderContainer(
+          overrides: [
+            apiProvider.overrideWithValue(api),
+            sessionStoreProvider.overrideWithValue(store),
+          ],
+        );
+        addTearDown(container.dispose);
+        addTearDown(api.close);
+        final auth = container.read(authProvider.notifier);
+        await auth.restore();
+        expect(container.read(authProvider).session, isNull);
+        expect(container.read(authProvider).loading, isFalse);
+        expect(
+          container.read(authProvider).message,
+          failure == 'offline'
+              ? 'We could not connect. Check your connection and try again.'
+              : 'We could not complete that request. Please try again.',
+        );
+        expect(store.token, 'saved-draft-session');
+        unavailable = false;
+        await auth.restore();
+        expect(
+          container.read(authProvider).session!.registrationRequired,
+          isTrue,
+        );
+        expect(container.read(authProvider).session!.ready, isFalse);
+        expect(container.read(authProvider).message, isNull);
+      },
+    );
+  }
 }
