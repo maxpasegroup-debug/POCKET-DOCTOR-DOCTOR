@@ -35,7 +35,7 @@ void main() {
       final file = File('${directory.path}/selected.png')
         ..writeAsBytesSync(
           base64Decode(
-            'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aL1sAAAAASUVORK5CYII=',
+            'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH5gMQFwcdLl4wmwAAAAtJREFUCNdjYAACAAAFAAHiJgWbAAAAAElFTkSuQmCC',
           ),
         );
       addTearDown(() => directory.deleteSync(recursive: true));
@@ -71,6 +71,18 @@ void main() {
           }
           if (request.url.path.endsWith('/auth/logout')) {
             return http.Response('{"data":{}}', 200);
+          }
+          if (request.method == 'GET' &&
+              request.url.path.contains('/documents/')) {
+            return http.Response(
+              jsonEncode({
+                'data': {
+                  'contentType': 'image/png',
+                  'contentBase64': base64Encode(file.readAsBytesSync()),
+                },
+              }),
+              200,
+            );
           }
           if (request.method == 'PATCH') {
             data = {...data, 'profile': jsonDecode(request.body)};
@@ -194,6 +206,11 @@ void main() {
             tester.state(find.byType(RegistrationForm)),
             same(originalForm),
           );
+          tester
+              .state<ScrollableState>(find.byType(Scrollable).first)
+              .position
+              .jumpTo(0);
+          await tester.pumpAndSettle();
           expect(find.textContaining('Step 3 of 4'), findsOneWidget);
         }
         expect(tester.takeException(), isNull);

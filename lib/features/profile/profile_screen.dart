@@ -4,6 +4,7 @@ import '../../shared/models/doctor_models.dart';
 import '../../shared/widgets/workspace_widgets.dart';
 import '../appointments/doctor_repository.dart';
 import '../auth/auth_controller.dart';
+import 'profile_photo.dart';
 
 class ProfileScreen extends ConsumerWidget {
   const ProfileScreen({super.key});
@@ -78,6 +79,7 @@ class _ProfileFormState extends ConsumerState<ProfileForm> {
     key: form,
     child: FormPage(
       children: [
+        const ProfilePhoto(),
         Text(
           widget.doctor.name,
           style: Theme.of(context).textTheme.headlineSmall,

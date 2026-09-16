@@ -110,6 +110,16 @@ class RegistrationRepository {
       RegistrationApplication.fromJson(
         await api.request('$path/submit', method: 'POST', body: {}),
       );
+  Future<Uint8List> image(String documentId) async {
+    final json = await api.request(
+      '$path/documents/${Uri.encodeComponent(documentId)}',
+    );
+    if (!['image/jpeg', 'image/png'].contains(json['contentType'])) {
+      throw const ApiFailure('This document is not a supported image.');
+    }
+    return base64Decode(json['contentBase64'] as String);
+  }
+
   Future<RegistrationApplication> upload(
     String kind,
     String name,

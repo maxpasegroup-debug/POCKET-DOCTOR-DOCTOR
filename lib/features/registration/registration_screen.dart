@@ -4,26 +4,18 @@ import 'package:file_selector/file_selector.dart';
 import '../../shared/widgets/workspace_widgets.dart';
 import '../auth/auth_controller.dart';
 import 'registration_repository.dart';
+import 'credential_image_preview.dart';
 
 class RegistrationScreen extends ConsumerWidget {
   const RegistrationScreen({super.key});
   @override
   Widget build(BuildContext context, WidgetRef ref) => Scaffold(
-    appBar: AppBar(
-      title: const Text('Doctor registration'),
-      actions: [
-        IconButton(
-          tooltip: 'Log out',
-          onPressed: () => ref.read(authProvider.notifier).logout(),
-          icon: const Icon(Icons.logout),
-        ),
-      ],
-    ),
+    appBar: AppBar(title: const Text('Doctor registration')),
     body: SafeArea(
       child: ref
           .watch(registrationProvider)
           .when(
-            loading: () => const Center(child: CircularProgressIndicator()),
+            loading: () => const LoadingShimmer(label: 'Loading registration'),
             error: (_, _) => FormPage(
               children: [
                 const Notice(
@@ -361,6 +353,7 @@ class _RegistrationFormState extends ConsumerState<RegistrationForm> {
                 'IDENTITY',
                 'PROFILE_PHOTO',
                 'ADDITIONAL',
+                ...app.documents.map((document) => document.kind),
               })
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -403,9 +396,16 @@ class _RegistrationFormState extends ConsumerState<RegistrationForm> {
                         'Upload ${kind.toLowerCase().replaceAll('_', ' ')}',
                       ),
                     ),
+                    for (final document in app.documents.where(
+                      (d) => d.kind == kind,
+                    ))
+                      CredentialImagePreview(
+                        key: ValueKey(document.id),
+                        document: document,
+                      ),
+                    ...documents(app, editable: true, kind: kind),
                   ],
                 ),
-              ...documents(app, editable: true),
             ],
             if (step == 3) ...[
               if (app.documentsDeferred)
@@ -500,9 +500,11 @@ class _RegistrationFormState extends ConsumerState<RegistrationForm> {
   List<Widget> documents(
     RegistrationApplication app, {
     bool editable = false,
+    String? kind,
   }) => [
-    if (app.documents.isEmpty) const Text('No documents submitted.'),
-    for (final d in app.documents)
+    if (kind == null && app.documents.isEmpty)
+      const Text('No documents submitted.'),
+    for (final d in app.documents.where((d) => kind == null || d.kind == kind))
       ListTile(
         contentPadding: EdgeInsets.zero,
         title: Text(d.kind.toLowerCase().replaceAll('_', ' ')),

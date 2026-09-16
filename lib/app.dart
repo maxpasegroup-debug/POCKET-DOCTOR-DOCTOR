@@ -10,6 +10,7 @@ import 'features/profile/profile_screen.dart';
 import 'features/availability/availability_screen.dart';
 import 'features/consultation/consultation_screen.dart';
 import 'shared/widgets/workspace_widgets.dart';
+import 'shared/widgets/splash_screen.dart';
 
 class DoctorApp extends StatelessWidget {
   const DoctorApp({super.key});
@@ -31,10 +32,15 @@ class SessionGate extends ConsumerStatefulWidget {
 class _SessionGateState extends ConsumerState<SessionGate>
     with WidgetsBindingObserver {
   bool obscured = false;
+  bool starting = true;
+  Timer? splashTimer;
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
+    splashTimer = Timer(const Duration(milliseconds: 900), () {
+      if (mounted) setState(() => starting = false);
+    });
     Future.microtask(() {
       if (mounted) unawaited(ref.read(authProvider.notifier).restore());
     });
@@ -43,6 +49,7 @@ class _SessionGateState extends ConsumerState<SessionGate>
   @override
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
+    splashTimer?.cancel();
     super.dispose();
   }
 
@@ -61,7 +68,7 @@ class _SessionGateState extends ConsumerState<SessionGate>
   @override
   Widget build(BuildContext context) {
     final auth = ref.watch(authProvider);
-    final covered = obscured || auth.loading;
+    final covered = starting || obscured || auth.loading;
     return Stack(
       fit: StackFit.expand,
       children: [
@@ -71,12 +78,12 @@ class _SessionGateState extends ConsumerState<SessionGate>
           excluding: covered,
           child: Offstage(offstage: covered, child: _content(auth)),
         ),
-        if (covered)
+        if (starting || (auth.loading && auth.session == null))
+          const SplashScreen()
+        else if (covered)
           const Scaffold(
-            body: Center(
-              child: CircularProgressIndicator(
-                semanticsLabel: 'Checking your session',
-              ),
+            body: SafeArea(
+              child: LoadingShimmer(label: 'Checking your session'),
             ),
           ),
       ],
@@ -103,10 +110,6 @@ class _SessionGateState extends ConsumerState<SessionGate>
               FilledButton(
                 onPressed: () => ref.read(authProvider.notifier).refresh(),
                 child: const Text('Check status'),
-              ),
-              OutlinedButton(
-                onPressed: () => ref.read(authProvider.notifier).logout(),
-                child: const Text('Log out'),
               ),
             ],
           ),
@@ -141,16 +144,7 @@ class _WorkspaceState extends ConsumerState<Workspace> {
       }
     },
     child: Scaffold(
-      appBar: AppBar(
-        title: const Brand(),
-        actions: [
-          IconButton(
-            tooltip: 'Log out',
-            onPressed: () => ref.read(authProvider.notifier).logout(),
-            icon: const Icon(Icons.logout),
-          ),
-        ],
-      ),
+      appBar: AppBar(title: const Brand()),
       body: SafeArea(
         child: appointmentId != null
             ? ConsultationScreen(

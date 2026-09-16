@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/errors/api_failure.dart';
+import 'loading_shimmer.dart';
+export 'loading_shimmer.dart';
 
 String friendlyError(Object error) => switch (error) {
   ApiFailure() => error.message,
@@ -61,9 +63,7 @@ class AsyncContent<T> extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (value.isLoading) {
-      return const Center(
-        child: CircularProgressIndicator(semanticsLabel: 'Loading workspace'),
-      );
+      return const LoadingShimmer(label: 'Loading workspace');
     }
     if (value.hasError) {
       return ListView(

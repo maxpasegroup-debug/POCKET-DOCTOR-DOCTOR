@@ -106,12 +106,12 @@ void main() {
     final requests = await launch(tester, authenticated: false);
     await tester.tap(find.text('Send verification code'));
     await tester.pumpAndSettle();
-    expect(
-      find.text('Enter a valid 10-digit mobile number.'),
-      findsOneWidget,
-    );
+    expect(find.text('Enter a valid 10-digit mobile number.'), findsOneWidget);
     await tester.enterText(find.byType(TextFormField), '+91 98765 43210');
-    expect(tester.widget<TextFormField>(find.byType(TextFormField)).controller!.text, '9876543210');
+    expect(
+      tester.widget<TextFormField>(find.byType(TextFormField)).controller!.text,
+      '9876543210',
+    );
     await tester.tap(find.text('Send verification code'));
     await tester.pumpAndSettle();
     await tester.enterText(find.byType(TextFormField), '123');
@@ -122,7 +122,12 @@ void main() {
     await tester.tap(find.text('Verify & continue'));
     await tester.pumpAndSettle();
     expect(find.text('Home'), findsOneWidget);
-    expect(jsonDecode(requests.firstWhere((r) => r.url.path.endsWith('/otp/request')).body)['phone'], '+919876543210');
+    expect(
+      jsonDecode(
+        requests.firstWhere((r) => r.url.path.endsWith('/otp/request')).body,
+      )['phone'],
+      '+919876543210',
+    );
     expect(requests.where((r) => r.url.path.endsWith('/otp/verify')).length, 1);
     expect(tester.takeException(), isNull);
   });
@@ -257,14 +262,22 @@ void main() {
     expect(find.text('Check status'), findsOneWidget);
   });
   testWidgets(
-    'logout from appointment removes private content and navigation',
+    'logout through Profile after an appointment removes private content and navigation',
     (tester) async {
       await launch(tester);
       await tester.tap(find.text('All'));
       await tester.pumpAndSettle();
       await tester.tap(find.text('Assigned patient'));
       await tester.pumpAndSettle();
-      await tester.tap(find.byTooltip('Log out'));
+      expect(find.byTooltip('Log out'), findsNothing);
+      await tester.tap(find.text('Profile'));
+      await tester.pumpAndSettle();
+      await tester.scrollUntilVisible(
+        find.text('Log out'),
+        250,
+        scrollable: find.byType(Scrollable).first,
+      );
+      await tester.tap(find.text('Log out'));
       await tester.pumpAndSettle();
       expect(find.text('Assigned patient'), findsNothing);
       expect(find.text('Private clinical text'), findsNothing);
